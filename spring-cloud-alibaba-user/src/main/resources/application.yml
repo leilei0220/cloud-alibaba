@@ -8,7 +8,7 @@ spring:
   cloud:
     nacos:
       #\u6307\u5B9Anacos\u670D\u52A1\u7AEF\u7684\u4F4D\u7F6E\uFF08\u5F53\u524D\u4EC5\u662F\u4F5C\u4E3A\u4E00\u4E2A\u53D8\u91CF\u7F62\u4E86\uFF09  \u9ED8\u8BA4\u4E3Alocalhost:8848
-      server-addr: http://42.192.160.109:8848
+      server-addr: http://localhost:8848
       discovery:
         # nacos\u670D\u52A1\u7AEF\u4F4D\u7F6E\uFF08\u6CE8\u518C\u4E2D\u5FC3\u670D\u52A1\u7AEF\u5730\u5740\u7684\u5B9E\u9645\u4F7F\u7528\uFF09
         server-addr: ${spring.cloud.nacos.server-addr}
