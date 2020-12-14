@@ -1,6 +1,6 @@
 #指定当前服务端口号
 server:
-  port: 40020
+  port: 30020
 spring:
   application:
     #指定当前服务名字
