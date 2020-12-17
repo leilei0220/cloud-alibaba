@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class LoginController {
+    public static final String SUCCESS = "success";
     private final UserFeignClient userFeignClient;
 
     @Autowired
@@ -23,7 +24,7 @@ public class LoginController {
     @PostMapping("/login")
     public String login(@RequestBody User user) {
         String result = userFeignClient.findOneByUserNameAndPassWord(user.getUserName(), user.getPassWord());
-        if ("success".equals(result)) {
+        if (SUCCESS.equals(result)) {
             return "登陆成功啦！！！";
         }
         return "登陆失败";

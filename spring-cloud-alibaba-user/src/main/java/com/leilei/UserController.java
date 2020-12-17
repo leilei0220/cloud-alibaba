@@ -1,5 +1,7 @@
 package com.leilei;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +17,12 @@ import java.util.Objects;
  * @desc
  */
 @RestController
+@RefreshScope
 @RequestMapping("/user")
 public class UserController {
+    @Value("${systemInfo.name}")
+    private String userName;
+
     @GetMapping("/find/{userName}/{passWord}")
     public String findUser(@PathVariable("userName") String userName, @PathVariable("passWord") String passWord,
                            HttpServletRequest request) {
@@ -25,5 +31,11 @@ public class UserController {
             return "success";
         }
         return "error";
+    }
+
+    @GetMapping("/test/refresh")
+    public String testRefreshConfig() {
+        System.out.println(userName);
+        return userName;
     }
 }

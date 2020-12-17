@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @FeignClient(value = "app-user")
 public interface UserFeignClient {
+    /**
+     * 模拟查询用户服务
+     * @param userName
+     * @param passWord
+     * @return
+     */
     @GetMapping("/user/find/{userName}/{passWord}")
     String findOneByUserNameAndPassWord(@PathVariable("userName") String userName, @PathVariable("passWord") String passWord);
 }
