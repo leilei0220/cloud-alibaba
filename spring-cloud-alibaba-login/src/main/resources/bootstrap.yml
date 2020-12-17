@@ -13,5 +13,5 @@ spring:
 #        # nacos服务端位置（注册中心服务端地址的实际使用）
 #        server-addr: ${spring.cloud.nacos.server-addr}
       config:
-#        server-addr: 42.192.160.109:8848
+#        server-addr: ${spring.cloud.nacos.server-addr}
         file-extension: yml

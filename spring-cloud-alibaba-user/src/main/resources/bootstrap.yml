@@ -11,11 +11,12 @@ spring:
     nacos:
       #指定nacos服务端的位置（当前仅是作为一个变量罢了）  默认为localhost:8848
       server-addr: http://ip:8848
-        #定义好了上访的server-addr 后下方配置可省略
-      #discovery:
-        # nacos服务端位置（注册中心服务端地址的实际使用）
-        #server-addr: ${spring.cloud.nacos.server-addr}
+     # discovery:
+        # nacos注册中心服务端位置定义好了上方的的server-addr 后下方配置可省略
+      # server-addr: ${spring.cloud.nacos.server-addr}
       config:
+        #nacos配置中心服务端位置，定义好了上方的的server-addr 后下方配置可省略
+        # server-addr: ${spring.cloud.nacos.server-addr}
         # 自己项目的远端配置文件类型
         file-extension: yml
         # 自己定义的命名空间Id
