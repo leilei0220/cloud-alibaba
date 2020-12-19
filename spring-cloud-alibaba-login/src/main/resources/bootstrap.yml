@@ -1,4 +1,3 @@
-##指定当前服务端口号
 #server:
 #  port: 30020
 spring:
@@ -8,10 +7,14 @@ spring:
   cloud:
     nacos:
       #指定nacos服务端的位置（当前仅是作为一个变量罢了）  默认为localhost:8848
-      server-addr: 192.168.146.131:8846
-#      discovery:
-#        # nacos服务端位置（注册中心服务端地址的实际使用）
-#        server-addr: ${spring.cloud.nacos.server-addr}
+      server-addr: xxx:8848
+      discovery:
+        #服务注册到哪个命名空间
+        namespace: 2b410080-13d5-4899-a74e-03f8a348ffb4
       config:
-#        server-addr: ${spring.cloud.nacos.server-addr}
+        #服务从哪个哪个命名空间拉取配置
+        namespace: 2b410080-13d5-4899-a74e-03f8a348ffb4
+        #服务端配置文件后缀
         file-extension: yml
+        #配置文件所在分组
+        group: app
