@@ -5,6 +5,10 @@ spring:
     #指定当前服务名字
     name: app-login
   cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.146.131:7788
+        heartbeat-interval-ms: 5000
     nacos:
       #指定nacos服务端的位置（当前仅是作为一个变量罢了）  默认为localhost:8848
       server-addr: xxx:8848
