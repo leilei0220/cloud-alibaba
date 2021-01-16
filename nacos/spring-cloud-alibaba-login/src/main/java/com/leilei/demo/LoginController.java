@@ -1,6 +1,7 @@
 package com.leilei.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +29,10 @@ public class LoginController {
             return "登陆成功啦！！！";
         }
         return "登陆失败";
+    }
+
+    @GetMapping("/get")
+    public String get() {
+        return "赵钱孙李";
     }
 }
